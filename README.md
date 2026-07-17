@@ -1,6 +1,6 @@
 # ⚔️ Анализ культовых AAA-синглов
 
-> Интерактивный дашборд для сравнения топовых одиночных игр по оценкам критиков и времени прохождения сюжета. Никакого онлайн-калла — только чистокровные шедевры.
+> Интерактивный дашборд для сравнения топовых одиночных игр по оценкам критиков и времени прохождения сюжета.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-🔥-FF4B4B?style=for-the-badge)](https://streamlit.io)
