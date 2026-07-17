@@ -14,20 +14,25 @@ data = [
     {"игра": "God of War Ragnarök", "серия": "God of War", "оценка": 94, "часы": 26},
 ]
 
+# название сайта
 st.title('⚔️ Анализ культовых AAA-синглов')
 
+# фильтр по франшизам
 franchises = ['Все серии', 'Resident Evil', 'Red Dead Redemption', 'God of War']
 selected_franchise = st.sidebar.selectbox('Выбери серию игр:', franchises)
 
+# выбор показателя для графика
 metric = st.sidebar.radio('Что сравниваем?', ['Оценка на Metacritic', 'Время на сюжет (часов)'])
 metric_key = 'оценка' if metric == 'Оценка на Metacritic' else 'часы'
 
+# логика фильтрации
 if selected_franchise != 'Все серии':
     filtered_data = [item for item in data if item['серия'] == selected_franchise]
 else:
     filtered_data = data
 
 
+# отрисовка интерактивного графика через Plotly
 fig = px.bar(
     filtered_data,
     x='игра',
@@ -37,7 +42,9 @@ fig = px.bar(
     title=f'Сравнение по параметру: {metric}'
 )
 
+# настройка внешнего вида графика
 fig.update_traces(textposition='inside')
 fig.update_layout(yaxis_title=metric)
 
+# вывод на мини-сайт
 st.plotly_chart(fig)
