@@ -7,8 +7,8 @@ data = [
     {"игра": "Resident Evil Village", "серия": "Resident Evil", "оценка": 84, "часы": 15},
     {"игра": "Resident Evil 2 Remake", "серия": "Resident Evil", "оценка": 91, "часы": 11},
     # Red Dead Redemption
-    {"игра": "Red Dead Redemption 2", "серия": "RDR", "оценка": 97, "часы": 50},
-    {"игра": "Red Dead Redemption", "серия": "RDR", "оценка": 95, "часы": 18},
+    {"игра": "Red Dead Redemption 2", "серия": "Red Dead Redemption", "оценка": 97, "часы": 50},
+    {"игра": "Red Dead Redemption", "серия": "Red Dead Redemption", "оценка": 95, "часы": 18},
     # Скандинавский God of War
     {"игра": "God of War (2018)", "серия": "God of War", "оценка": 94, "часы": 21},
     {"игра": "God of War Ragnarök", "серия": "God of War", "оценка": 94, "часы": 26},
@@ -17,8 +17,8 @@ data = [
 # название сайта
 st.title('⚔️ Анализ культовых AAA-синглов')
 
-# фильтр по франшизам
-franchises = ['Все серии', 'Resident Evil', 'Red Dead Redemption', 'God of War']
+# фильтр по франшизам (список берём из данных, чтобы названия не расходились)
+franchises = ['Все серии'] + list(dict.fromkeys(item['серия'] for item in data))
 selected_franchise = st.sidebar.selectbox('Выбери серию игр:', franchises)
 
 # выбор показателя для графика

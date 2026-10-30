@@ -27,10 +27,11 @@
 ## 🚀 Как запустить проект у себя на компе
 
 ```bash
-git clone [https://github.com/dayvoens/AAA-games-visualization.git](https://github.com/dayvoens/AAA-games-visualization.git)
+git clone https://github.com/dayvoens/AAA-games-visualization.git
 
 cd AAA-games-visualization
 
 pip install -r requirements.txt
 
 streamlit run games-genres.py
+```
